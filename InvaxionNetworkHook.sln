@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvaxionNetworkHook", "InvaxionNetworkHook\InvaxionNetworkHook.csproj", "{2BBA1E87-AFB7-47CC-8972-B1CF9A06C2A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtoRestore", "Restore\ProtoRestore.csproj", "{6FBE1CBF-04FC-4523-B49C-56858CC18B92}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtoRestore", "ProtoRestore\ProtoRestore.csproj", "{6FBE1CBF-04FC-4523-B49C-56858CC18B92}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvaxionNetworkCapture", "InvaxionNetworkCapture\InvaxionNetworkCapture.csproj", "{41C7DA0E-E8FB-4905-8E3D-B8689D784C1B}"
 EndProject
