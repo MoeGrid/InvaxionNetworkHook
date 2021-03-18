@@ -1,9 +1,13 @@
 # 音灵联网HOOK
 
-懒得写什么介绍了, 有能者自己看代码
+用于替换服务器地址
 
 ```
+InvaxionNetworkCapture  抓包器
 InvaxionNetworkHook     Hook插件
 ProtoRestore            proto还原工具
-
 ```
+
+#### 依赖项目
+* Harmony <https://github.com/pardeike/Harmony>
+* UnityDoorstop <https://github.com/NeighTools/UnityDoorstop>
