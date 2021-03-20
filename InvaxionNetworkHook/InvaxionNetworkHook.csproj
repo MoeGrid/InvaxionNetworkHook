@@ -56,7 +56,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EagleTcpCapture.cs" />
     <Compile Include="EagleTcpClient.cs" />
     <Compile Include="Hook\HookEagleTcp.cs" />
     <Compile Include="Hook\HookGlobalConfig.cs" />

@@ -8,7 +8,7 @@ namespace InvaxionNetworkHook.Hook
     class HookEagleTcp
     {
         private static readonly Type HookTargetType = typeof(EagleTcp);
-        private static readonly Type HookType = typeof(EagleTcpCapture);
+        private static readonly Type HookType = typeof(EagleTcpClient);
 
         public static IEnumerable<CodeInstruction> DotCtorTranspiler(IEnumerable<CodeInstruction> instructions)
         {
