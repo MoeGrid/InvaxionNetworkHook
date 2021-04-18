@@ -18,8 +18,8 @@ namespace InvaxionNetworkHook.Hook
             {
                 new HostPortData()
                 {
-                    host="127.0.0.1",
-                    port=20017
+                    host="42.193.125.167",
+                    port=60311
                 }
             };
         }

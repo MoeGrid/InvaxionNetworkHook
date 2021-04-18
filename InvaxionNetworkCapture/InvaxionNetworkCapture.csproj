@@ -35,21 +35,21 @@
       <HintPath>..\Lib\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>E:\Program Files\Steam\steamapps\common\音灵 INVAXION\INVAXION_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>F:\Program Files\Steam\steamapps\common\音灵 INVAXION\INVAXION_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>E:\Program Files\Steam\steamapps\common\音灵 INVAXION\INVAXION_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>F:\Program Files\Steam\steamapps\common\音灵 INVAXION\INVAXION_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="UnityEngine">
-      <HintPath>E:\Program Files\Steam\steamapps\common\音灵 INVAXION\INVAXION_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>F:\Program Files\Steam\steamapps\common\音灵 INVAXION\INVAXION_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
-      <HintPath>E:\Program Files\Steam\steamapps\common\音灵 INVAXION\INVAXION_Data\Managed\UnityEngine.Networking.dll</HintPath>
+      <HintPath>F:\Program Files\Steam\steamapps\common\音灵 INVAXION\INVAXION_Data\Managed\UnityEngine.Networking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>E:\Program Files\Steam\steamapps\common\音灵 INVAXION\INVAXION_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>F:\Program Files\Steam\steamapps\common\音灵 INVAXION\INVAXION_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -63,7 +63,7 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>SET game=E:\Program Files\Steam\steamapps\common\音灵 INVAXION\
+    <PostBuildEvent>SET game=F:\Program Files\Steam\steamapps\common\音灵 INVAXION\
 
 copy "$(ProjectDir)$(OutDir)$(TargetFileName)" "%25game%25$(TargetFileName)"
 copy "$(ProjectDir)$(OutDir)0Harmony.dll" "%25game%25INVAXION_Data\Managed\0Harmony.dll"

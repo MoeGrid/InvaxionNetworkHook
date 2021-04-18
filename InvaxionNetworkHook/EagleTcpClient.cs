@@ -161,7 +161,12 @@ namespace InvaxionNetworkHook
 
                     var pkgLen = recvReader.ReadInt32();
 
-                    client.Receive(recvBuf, pkgLen, SocketFlags.None);
+                    int recvLen = 0;
+                    while(recvLen < pkgLen)
+                    {
+                        recvLen += client.Receive(recvBuf, recvLen, pkgLen - recvLen, SocketFlags.None);
+                    }
+
                     recvReader.BaseStream.Seek(0, SeekOrigin.Begin);
 
                     var pkg = new GamePackage
