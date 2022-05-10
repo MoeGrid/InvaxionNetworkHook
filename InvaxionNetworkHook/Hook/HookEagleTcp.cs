@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Harmony;
 using System.Collections.Generic;
 using System.Reflection.Emit;
@@ -7,14 +7,13 @@ namespace InvaxionNetworkHook.Hook
 {
     class HookEagleTcp
     {
+
         private static readonly Type HookTargetType = typeof(EagleTcp);
         private static readonly Type HookType = typeof(EagleTcpClient);
 
-        public static IEnumerable<CodeInstruction> DotCtorTranspiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var method = AccessTools.Method(HookTargetType, "contectServer");
-            var method2 = AccessTools.Method(HookType, "ContectServer");
 
+        private static IEnumerable<CodeInstruction> GeneralTranspiler(IEnumerable<CodeInstruction> instructions, MethodInfo method, MethodInfo method2)
+        {
             foreach (var instruction in instructions)
             {
                 if (instruction.opcode == OpCodes.Call && instruction.operand == method)
@@ -22,63 +21,46 @@ namespace InvaxionNetworkHook.Hook
                 else
                     yield return instruction;
             }
+        }
+
+        public static IEnumerable<CodeInstruction> DotCtorTranspiler(IEnumerable<CodeInstruction> instructions)
+        {
+            MethodInfo method = AccessTools.Method(HookEagleTcp.HookTargetType, "contectServer");
+            MethodInfo method2 = AccessTools.Method(HookEagleTcp.HookType, "ContectServer");
+
+            return GeneralTranspiler(instructions, method, method2);
         }
 
         public static IEnumerable<CodeInstruction> IsConnectedTranspiler(IEnumerable<CodeInstruction> instructions)
         {
-            var method = AccessTools.Method(HookTargetType, "isConnected");
-            var method2 = AccessTools.Method(HookType, "IsConnected");
+            MethodInfo method = AccessTools.Method(HookEagleTcp.HookTargetType, "isConnected");
+            MethodInfo method2 = AccessTools.Method(HookEagleTcp.HookType, "IsConnected");
 
-            foreach (var instruction in instructions)
-            {
-                if (instruction.opcode == OpCodes.Call && instruction.operand == method)
-                    yield return new CodeInstruction(OpCodes.Call, method2);
-                else
-                    yield return instruction;
-            }
+            return GeneralTranspiler(instructions, method, method2);
         }
 
         public static IEnumerable<CodeInstruction> DisconnectTranspiler(IEnumerable<CodeInstruction> instructions)
         {
-            var method = AccessTools.Method(HookTargetType, "disconnectServer");
-            var method2 = AccessTools.Method(HookType, "DisconnectServer");
+            MethodInfo method = AccessTools.Method(HookEagleTcp.HookTargetType, "disconnectServer");
+            MethodInfo method2 = AccessTools.Method(HookEagleTcp.HookType, "DisconnectServer");
 
-            foreach (var instruction in instructions)
-            {
-                if (instruction.opcode == OpCodes.Call && instruction.operand == method)
-                    yield return new CodeInstruction(OpCodes.Call, method2);
-                else
-                    yield return instruction;
-            }
+            return GeneralTranspiler(instructions, method, method2);
         }
 
         public static IEnumerable<CodeInstruction> SendCmdTranspiler(IEnumerable<CodeInstruction> instructions)
         {
-            var method = AccessTools.Method(HookTargetType, "sendCmd");
-            var method2 = AccessTools.Method(HookType, "SendCmd");
+            MethodInfo method = AccessTools.Method(HookEagleTcp.HookTargetType, "sendCmd");
+            MethodInfo method2 = AccessTools.Method(HookEagleTcp.HookType, "SendCmd");
 
-            foreach (var instruction in instructions)
-            {
-                if (instruction.opcode == OpCodes.Call && instruction.operand == method)
-                    yield return new CodeInstruction(OpCodes.Call, method2);
-                else
-                    yield return instruction;
-            }
+            return GeneralTranspiler(instructions, method, method2);
         }
 
         public static IEnumerable<CodeInstruction> ParseCmdTranspiler(IEnumerable<CodeInstruction> instructions)
         {
-            var method = AccessTools.Method(HookTargetType, "parseCmd");
-            var method2 = AccessTools.Method(HookType, "ParseCmd");
+            MethodInfo method = AccessTools.Method(HookEagleTcp.HookTargetType, "parseCmd");
+            MethodInfo method2 = AccessTools.Method(HookEagleTcp.HookType, "ParseCmd");
 
-            foreach (var instruction in instructions)
-            {
-                if (instruction.opcode == OpCodes.Call && instruction.operand == method)
-                    yield return new CodeInstruction(OpCodes.Call, method2);
-                else
-                    yield return instruction;
-            }
+            return GeneralTranspiler(instructions, method, method2);
         }
-
     }
 }
